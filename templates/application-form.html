@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Application Form{% endblock %}
+{% block content %}
+
+<h1>Application Form</h1>
+
+<!-- Beginning of the application form -->
+  <p id="instruction">Please, submit the application form with all the required information. All fields are required.</p>
+
+  <form action="/application" method="POST">
+    <!-- First name, last name and salary input fields -->
+    <p>
+        <label for="firstname">First name:</label> 
+        <input id="firstname" type="text" name="firstname">
+    </p>
+    <p id="lastname">
+        <label for="lastname">Last name:</label> 
+        <input id="lastname" type="text" name="lastname">
+    </p>
+    <p>
+        <label for="salary">Salary:</label>
+        <input id="salary" type="number" name="salary">
+    </p>
+    <!-- end of the name and salary input fields -->
+
+    <!-- Job position list of radio buttons -->
+
+    <p>Which job position are you applying for?</p>
+
+    <p>
+        <input id="developer" type="radio" name="job" value="Software Engineer">
+        <label for="developer">Software Engineer</label><br>
+
+        <input id="qa" type="radio" name="job" value="QA Engineer">
+        <label for="qa">QA Engineer</label><br>
+
+        <input id="productmanager" type="radio" name="job" value="Product Manager">
+        <label for="productmanager">Product Manager</label><br>
+    </p>
+
+    <!-- end of the job position list -->
+
+    <input type="submit" value="Submit">
+  </form>
+<!-- End of the application form -->
+
+    <p class="instruction">* We'll reach back to you once we receive your submitted form.</p>
+
+{% endblock %}
